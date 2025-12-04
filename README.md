@@ -25,8 +25,8 @@ Follow these steps to set up the project on your local machine.
 ### 1. Clone this repository
 
 ```bash
-
-cd react-graphql-fullstack
+https://github.com/ViKi10000/GraphQL-CRUD.git
+cd GraphQL-CRUD
 ```
 
 ### 2. Backend Setup
