@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery, useMutation, gql } from "@apollo/client";
+import { FaUser, FaUsers, FaTrash } from "react-icons/fa";
 
 const GET_USERS = gql`
   query GetUsers {
@@ -119,7 +120,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 font-sans antialiased">
-      {/* Apple-style Header */}
+      
       <div className="bg-white/80 backdrop-blur-xl border-b border-gray-200/50 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
@@ -133,7 +134,7 @@ export default function App() {
 
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          {/* Create / Edit Panel */}
+         
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-sm border border-gray-200/50 p-8 hover:shadow-md transition-all duration-300">
               <h2 className="text-2xl font-semibold text-gray-900 mb-8">
@@ -220,9 +221,7 @@ export default function App() {
               {!selectedUser ? (
                 <div className="flex items-center justify-center h-64 bg-gray-50/50 rounded-xl border-2 border-dashed border-gray-200">
                   <div className="text-center">
-                    <svg className="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg>
+                    <FaUser className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                     <p className="text-gray-400 font-medium">Select a user to view details</p>
                   </div>
                 </div>
@@ -273,9 +272,7 @@ export default function App() {
 
           {data?.getUsers?.length === 0 ? (
             <div className="text-center py-16">
-              <svg className="w-20 h-20 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
+              <FaUsers className="w-20 h-20 text-gray-300 mx-auto mb-4" />
               <p className="text-gray-400 font-medium text-lg">No users yet</p>
               <p className="text-gray-400 text-sm mt-1">Create your first user to get started</p>
             </div>
@@ -306,9 +303,7 @@ export default function App() {
                       className="opacity-0 group-hover:opacity-100 p-2 text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200"
                       title="Delete user"
                     >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                      </svg>
+                      <FaTrash className="w-5 h-5" />
                     </button>
                   </div>
                   
